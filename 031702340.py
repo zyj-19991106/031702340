@@ -4,7 +4,14 @@ import  json
 import timeit
 import  pandas as pd
 import numpy
-string1 =input()
+while 1:
+    try:
+        inputraw=input();
+        if(inputraw=="END"):
+            break
+    except EOFError:
+        break
+string1 =inputraw
 typ=0
 if (string1[0:2]=='1!'):     #删去难度级
    string1 = string1.strip('1!')
