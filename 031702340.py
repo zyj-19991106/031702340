@@ -175,7 +175,7 @@ while 1:
          else:
                add_num[0]+='号'
                Address[5]=Address[5].strip(add_num[0])
-               Address.insert(4,add_num[0])
+               Address.insert(5,add_num[0])
 
 
 
