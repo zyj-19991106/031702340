@@ -16,6 +16,10 @@ while 1:
       elif (string1[0:2]=='2!'):
          string1 = string1.strip('2!')
          typ=2
+      else:
+            string1 = string1.strip('3!')
+            typ=2
+
       pattern1=re.compile(r'(.*),')
       pattern2=re.compile(r'\d{11}')
       name=pattern1.findall(string1) #提取名字
