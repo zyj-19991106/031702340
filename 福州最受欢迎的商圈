@@ -1,0 +1,55 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[59]:
+
+
+import requests
+import re
+from bs4 import BeautifulSoup
+
+url = "https://fz.meituan.com/s/%E5%95%86%E5%9C%88/"
+ 
+# 将cookies字符串组装为字典
+cookies_str = '__mta=156045956.1572655358726.1572656763859.1572656851256.6; _lxsdk_cuid=16e259c41780-0308f58141256f-7711439-100200-16e259c417980; _lxsdk=16e259c41780-0308f58141256f-7711439-100200-16e259c417980; uuid=f44b63a91240c8466608.1572590635.1.0.0; mtcdn=K; wm_order_channel=default; utm_source=; _lx_utm=utm_source%3Dso.com%26utm_medium%3Dorganic; lt=RihWjRC_s-r0OEn8k185kQVOp60AAAAAVAkAAPpvGhuvrfhDE_WCDelItgjRm2KAiC3F_ZMIPAjQOpy0IluJpX4W-kHPcmtc3vRgMA; u=2204284476; n=UGe868767483; token2=RihWjRC_s-r0OEn8k185kQVOp60AAAAAVAkAAPpvGhuvrfhDE_WCDelItgjRm2KAiC3F_ZMIPAjQOpy0IluJpX4W-kHPcmtc3vRgMA; unc=UGe868767483; __mta=156045956.1572655358726.1572655506868.1572655789865.3; client-id=30599982-bf69-40fd-88cf-9a3f77021ec4; ci=44; rvct=44%2C1219%2C708; firstTime=1572656847341; _lxsdk_s=16e29900a4d-57b-653-a18%7C%7C87'
+cookies_dict = {}
+for cookie in cookies_str.split(";"):
+    k, v = cookie.split("=", 1)
+    cookies_dict[k.strip()] = v.strip()
+ 
+# 其他请求头参数
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36'
+}
+ 
+# 访问页面
+page = requests.get(url=url, cookies=cookies_dict, headers=headers)
+page=page.text
+soup = BeautifulSoup(page)
+month = soup.find_all('div', {"class": "page index"})
+month = soup.find_all('div', {"class": "list-item-desc-top"})
+context=""
+for m in month:
+    context=str(m.get_text())
+    print("商圈名称:"+context[:context.find("很好")])
+ 
+    print("等级:很好")
+    print("分数:"+context[context.find("很好")+2:context.find("分")+1])
+    print("评分人数:"+context[context.find("分")+1:context.find("人")+1])
+    print("类型:"+context[context.find("评论")+2:context.find("|")])
+    print("地址:"+context[context.find("|")+1:context.find("查看地图")])
+    print("价格:"+context[context.find("查看地图")+4:])
+    print("\n")
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
