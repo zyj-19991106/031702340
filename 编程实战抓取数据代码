@@ -1,0 +1,25 @@
+from lxml import etree
+import requests
+import re
+url ='https://fz.meituan.com/meishi/rating/ 
+
+'
+headers={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'}
+def get_url(url):
+    response=requests.get(url,headers=headers)
+    text=response.text
+    #print(response.content.decode('utf-8'))
+    shopname=re.findall(r'"frontImg".*?title":(.*?),',response.text)
+    shopaddr=re.findall(r'"frontImg".*?address":(.*?),',response.text)
+    avgScore=re.findall(r'"frontImg".*?avgScore":(.*?),',response.text)
+    L1=len(shopname)
+    j=0;
+    while j<15:
+            list1=shopname[j]+shopaddr[j]+avgScore[j]
+            j=j+1
+            print(list1)
+
+for i in range(1,67):
+    curl=url+'pn{}/'.format(i)
+    get_url(curl)
+    print('结束')
