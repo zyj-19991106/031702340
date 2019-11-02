@@ -1,32 +1,27 @@
 import requests
 from lxml import etree
-
+j=0
 def spilder(url):
+    global j
+    list=["人均0-50","人均50-100","人均100-200","人均200+"]
     headers={
-        'Referer':'http://www.dianping.com/fuzhou/ch10/o3y50 
-
-',
+        'Referer':'http://www.dianping.com/fuzhou/ch10/o3y50',
         'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
     }
+    print(list[j])
     response=requests.get(url=url,headers=headers)
     html=etree.HTML(response.text)
+    #print(response.text)
     detil_html=html.xpath("//div[@class='tit']/a/@title")
     k = 0
     for  i in detil_html:
-        #print(i.tag)
-        k+=1
-        if k>5:
-            break
         print(i)
+        k += 1
+        if k >= 5:
+            break
 
-urls=["http://www.dianping.com/fuzhou/ch0 
-
-",'http://www.dianping.com/fuzhou/ch0/o3x50y100 
-
-','http://www.dianping.com/fuzhou/ch0/o3x100y200 
-
-','http://www.dianping.com/fuzhou/ch0/o3x200 
-
-']
+    j+=1
+    #print(html)
+urls=["http://www.dianping.com/fuzhou/ch10/o3y50",'http://www.dianping.com/fuzhou/ch10/o3x50y100','http://www.dianping.com/fuzhou/ch10/o3x100y200','http://www.dianping.com/fuzhou/ch10/o3x200']
 for url in urls:
     spilder(url)
