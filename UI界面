@@ -1,0 +1,110 @@
+from tkinter import *
+from tkinter import ttk
+import requests
+import json
+class menu_interface():
+    def __init__(self, master):
+        self.root = master
+        self.root.title("菜单界面")
+        self.root.geometry("1080x607")
+        Button(self.root, text="福州最受欢迎商圈", font=("华文行楷", 20),command=self.click1 ,relief="flat",  bg="#ffffff").place(x=46,y=60, width=239,height=61)
+        Button(self.root, text="美食餐厅排行榜", font=("华文行楷", 20),command=self.click2 , relief="flat",bg="#ffffff").place(x=46,y=184,width=239, height=61)
+        Button(self.root, text="最佳美食聚集地", font=("华文行楷", 20), command=self.click3 ,relief="flat",  bg="#ffffff").place(x=46, y=303, width=239, height=61)
+        Button(self.root, text="服饰类商圈", font=("华文行楷", 30), command=self.click4 ,relief="flat",  bg="#ffffff").place(x=46, y=422, width=239, height=61)
+    def click1(self):
+        self.root.destroy()
+        root = Tk()
+        photo = PhotoImage(file="C:\\Users\\Administrator\\Desktop\\fdughfh\\5.gif")
+        Label(root, image=photo).place(x=0, y=0, width=1080, height=810)  # 把图片整合到标签类中
+        popular_interface(root)
+    def click2(self):
+        self.root.destroy()
+        root = Tk()
+        photo = PhotoImage(file="C:\\Users\\Administrator\\Desktop\\fdughfh\\2.gif")
+        Label(root, image=photo).place(x=0, y=0, width=755, height=960)  # 把图片整合到标签类中
+        food_interface(root)
+    def click3(self):
+        self.root.destroy()
+        root = Tk()
+        photo = PhotoImage(file="C:\\Users\\Administrator\\Desktop\\fdughfh\\4.gif")
+        Label(root, image=photo).place(x=0, y=0, width=934, height=960)  # 把图片整合到标签类中
+        foodflock_inerface(root)
+    def click4(self):
+        self.root.destroy()
+        root = Tk()
+        photo = PhotoImage(file="C:\\Users\\Administrator\\Desktop\\fdughfh\\3.gif")
+        Label(root, image=photo).place(x=0, y=0, width=815, height=960)  # 把图片整合到标签类中
+        clothes_interface(root)
+class popular_interface():
+    def __init__(self, master):
+        self.root = master
+        self.root.title("福州最受欢迎商圈")
+        self.root.geometry("1080x810")
+        Button(self.root, text="返回", font=("华文行楷", 30), command=self.click1,relief="flat", bg="#ffffff").place(x=922, y=27, width=133,height=60)
+        Label(self.root, text="", font=("华文行楷", 15), bg="#eee7e1").place(x=39, y=131, width=537, height=190)
+        self.root.mainloop()
+    def click1(self):
+        self.root.destroy()
+        root = Tk()
+        # photo = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\D.gif")
+        # Label(root, image=photo).place(x=0, y=0, width=1080, height=608)  # 把图片整合到标签类中
+        menu_interface(root)
+        root.mainloop()
+class food_interface():
+    def __init__(self, master):
+        self.root = master
+        self.root.title("美食餐厅排行榜")
+        self.root.geometry("755x960")
+        Button(self.root, text="返回", font=("华文行楷", 30),command=self.click1, relief="flat", bg="#ffffff").place(x=37, y=25, width=173,
+                                                                                           height=62)
+        Label(self.root, text="", font=("华文行楷", 15), bg="#eee7e1").place(x=76, y=358, width=200, height=52)
+        Label(self.root, text="", font=("华文行楷", 15), bg="#eee7e1").place(x=493, y=358, width=200, height=52)
+        Label(self.root, text="", font=("华文行楷", 15), bg="#eee7e1").place(x=76, y=743, width=200, height=52)
+        Label(self.root, text="", font=("华文行楷", 15), bg="#eee7e1").place(x=493, y=743, width=200, height=52)
+        self.root.mainloop()
+    def click1(self):
+        self.root.destroy()
+        root = Tk()
+        # photo = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\D.gif")
+        # Label(root, image=photo).place(x=0, y=0, width=1080, height=608)  # 把图片整合到标签类中
+        menu_interface(root)
+        root.mainloop()
+class foodflock_inerface():
+    def __init__(self, master):
+        self.root = master
+        self.root.title("最佳美食聚集地")
+        self.root.geometry("934x960")
+        Button(self.root, text="返回", font=("华文行楷", 30),command=self.click1, relief="flat", bg="#ffffff").place(x=43, y=320, width=131,
+                                                                                           height=90)
+        Label(self.root, text="", font=("华文行楷", 15), bg="#eee7e1").place(x=258, y=130, width=568, height=706)
+        self.root.mainloop()
+    def click1(self):
+        self.root.destroy()
+        root = Tk()
+        # photo = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\D.gif")
+        # Label(root, image=photo).place(x=0, y=0, width=1080, height=608)  # 把图片整合到标签类中
+        menu_interface(root)
+        root.mainloop()
+class clothes_interface():
+    def __init__(self, master):
+        self.root = master
+        self.root.title("服饰类商圈")
+        self.root.geometry("815x960")
+        Button(self.root, text="返回", font=("华文行楷", 30), command=self.click1,relief="flat", bg="#ffffff").place(x=52, y=28, width=167,
+                                                                                           height=64)
+        Label(self.root, text="", font=("华文行楷", 15), bg="#eee7e1").place(x=67, y=176, width=511, height=333)
+
+        self.root.mainloop()
+    def click1(self):
+        self.root.destroy()
+        root = Tk()
+        # photo = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\D.gif")
+        # Label(root, image=photo).place(x=0, y=0, width=1080, height=608)  # 把图片整合到标签类中
+        menu_interface(root)
+        root.mainloop()
+if __name__ == '__main__':
+    root = Tk()
+    #photo = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\D.gif")
+    #Label(root, image=photo).place(x=0, y=0, width=1080, height=608)  # 把图片整合到标签类中
+    menu_interface(root)
+    root.mainloop()
