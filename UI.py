@@ -6,28 +6,28 @@ class menu_interface():
         self.root.title("菜单界面")
         self.root.geometry("405x720")
         global photo1
-        photo1 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\2.gif")#福州最受欢迎商圈
+        photo1 = PhotoImage(file=".\\ui附带图\\2.gif")#福州最受欢迎商圈
         Button(self.root,command=self.click1 ,relief="flat",image=photo1).place(x=32,y=20, width=145,height=196)
         global photo2
-        photo2 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\3.gif")#福州性价最高餐厅
+        photo2 = PhotoImage(file=".\\ui附带图\\3.gif")#福州性价最高餐厅
         Button(self.root,command=self.click2 , relief="flat",image=photo2).place(x=231,y=266,width=135, height=180)
         global photo3
-        photo3 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\4.gif")#福州最佳美食聚集地
+        photo3 = PhotoImage(file=".\\ui附带图\\4.gif")#福州最佳美食聚集地
         Button(self.root, command=self.click3 ,relief="flat",image=photo3).place(x=202, y=16, width=181, height=217)
         global photo4
-        photo4 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\5.gif")#福州最高评分商圈
+        photo4 = PhotoImage(file=".\\ui附带图\\5.gif")#福州最高评分商圈
         Button(self.root,command=self.click4 ,relief="flat",image=photo4).place(x=28, y=243, width=164, height=224)
     def click1(self):
         t1 = Toplevel()
         t1.title("福州最受欢迎商圈")
         t1.geometry('475x286')
         global photo11
-        photo11 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\12.gif")
+        photo11 = PhotoImage(file=".\\ui附带图\\12.gif")
         Label(t1, image=photo11).place(x=0, y=0, width=475, height=286)  # 把图片整合到标签类中
     def click2(self):
         self.root.destroy()
         root = Tk()
-        photo5 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\6.gif")
+        photo5 = PhotoImage(file=".\\ui附带图\\6.gif")
         Label(root, image=photo5).place(x=0, y=0, width=405, height=720)  # 把图片整合到标签类中
         food_interface(root)
     def click3(self):
@@ -35,17 +35,17 @@ class menu_interface():
         t1.title("福州最佳美食聚集地")
         t1.geometry('554x386')
         global photo12
-        photo12 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\14.gif")
+        photo12 = PhotoImage(file=".\\ui附带图\\14.gif")
         Label(t1, image=photo12).place(x=0, y=0, width=347, height=154)  # 把图片整合到标签类中
         global photo13
-        photo13 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\13.gif")
+        photo13 = PhotoImage(file=".\\ui附带图\\13.gif")
         Label(t1, image=photo13).place(x=0, y=154, width=554, height=232)  # 把图片整合到标签类中
     def click4(self):
         t1=Toplevel()
         t1.title("福州服饰最高评分商圈")
         t1.geometry('615x386')
         global photo14
-        photo14 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\15.gif")
+        photo14 = PhotoImage(file=".\\ui附带图\\15.gif")
         Label(t1, image=photo14).place(x=0, y=0, width=615, height=386)  # 把图片整合到标签类中
 class food_interface():
     def __init__(self, master):
@@ -54,31 +54,31 @@ class food_interface():
         self.root.geometry("405x720")
         #Button(self.root, text="返回", font=("华文行楷", 30),command=self.click1, relief="flat", bg="#e5e5e5").place(x=37, y=25, width=173, height=62)
         global photo6
-        photo6 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\7.gif")  # 福州最受欢迎商圈
+        photo6 = PhotoImage(file=".\\ui附带图\\7.gif")  # 福州最受欢迎商圈
         Button(self.root, command=self.click1, relief="flat", image=photo6).place(x=41, y=63, width=140, height=148)
         global photo7
-        photo7 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\8.gif")  # 福州性价最高餐厅
+        photo7 = PhotoImage(file=".\\ui附带图\\8.gif")  # 福州性价最高餐厅
         Button(self.root, command=self.click2, relief="flat", image=photo7).place(x=228, y=178, width=140, height=147)
         global photo8
-        photo8 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\9.gif")  # 福州最佳美食聚集地
+        photo8 = PhotoImage(file=".\\ui附带图\\9.gif")  # 福州最佳美食聚集地
         Button(self.root, command=self.click3, relief="flat", image=photo8).place(x=34, y=320, width=151, height=149)
         global photo9
-        photo9 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\10.gif")  # 福州最高评分商圈
+        photo9 = PhotoImage(file=".\\ui附带图\\10.gif")  # 福州最高评分商圈
         Button(self.root, command=self.click4, relief="flat", image=photo9).place(x=225, y=427, width=150 ,height=158)
         global photo10
-        photo10 = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\11.gif")  # 福州最高评分商圈
+        photo10 = PhotoImage(file=".\\ui附带图\\11.gif")  # 福州最高评分商圈
         Button(self.root, command=self.click5, relief="flat", image=photo10).place(x=279, y=641, width=83, height=46)
         self.root.mainloop()
     def click5(self):
         self.root.destroy()
         root = Tk()
-        photo = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\1.gif")
+        photo = PhotoImage(file=".\\ui附带图\\1.gif")
         Label(root, image=photo).place(x=0, y=0, width=405, height=720)  # 把图片整合到标签类中
         menu_interface(root)
         root.mainloop()
     def click1(self):
         w = Tk()
-        w.title("历史战局详情")
+        
         scrollBar = Scrollbar(w)
         scrollBar.pack(side=RIGHT, fill=Y)
         tree = ttk.Treeview(w, yscrollcommand=scrollBar.set, show="headings")
@@ -113,7 +113,7 @@ class food_interface():
         tree.pack()
     def click2(self):
         w = Tk()
-        w.title("历史战局详情")
+       
         scrollBar = Scrollbar(w)
         scrollBar.pack(side=RIGHT, fill=Y)
         tree = ttk.Treeview(w, yscrollcommand=scrollBar.set, show="headings")
@@ -149,7 +149,7 @@ class food_interface():
     def click3(self):
 
         w = Tk()
-        w.title("历史战局详情")
+       
         scrollBar = Scrollbar(w)
         scrollBar.pack(side=RIGHT, fill=Y)
         tree = ttk.Treeview(w, yscrollcommand=scrollBar.set, show="headings")
@@ -184,7 +184,7 @@ class food_interface():
         tree.pack()
     def click4(self):
         w = Tk()
-        w.title("历史战局详情")
+      
         scrollBar = Scrollbar(w)
         scrollBar.pack(side=RIGHT, fill=Y)
         tree = ttk.Treeview(w, yscrollcommand=scrollBar.set, show="headings")
@@ -232,7 +232,7 @@ class foodflock_inerface():
 
 if __name__ == '__main__':
     root = Tk()
-    photo = PhotoImage(file="C:\\Users\\ASUS\\Desktop\\1.gif")
+    photo = PhotoImage(file=".\\ui附带图\\1.gif")
     Label(root, image=photo).place(x=0, y=0, width=405, height=720)  # 把图片整合到标签类中
     menu_interface(root)
     root.mainloop()
