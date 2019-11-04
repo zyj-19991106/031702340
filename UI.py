@@ -1,7 +1,5 @@
 from tkinter import *
 from tkinter import ttk
-import requests
-import json
 class menu_interface():
     def __init__(self, master):
         self.root = master
